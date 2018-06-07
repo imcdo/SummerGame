@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 public class Room : MonoBehaviour {
 
     private enum Side
@@ -20,7 +21,9 @@ public class Room : MonoBehaviour {
         {Side.East, Vector2.right},
         {Side.West, Vector2.left}
     };
-       
+
+
+    [SerializeField] Side[] sidesWithDoors = { Side.North, Side.South, Side.East, Side.West };
     RoomManager rm;
     private int x;  //X possition  in the grid
     private int y;  //Y possition in the grid
@@ -34,7 +37,7 @@ public class Room : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//TODO: error check for sidesWithDoors, check to make sure no duplicates
 	}
 	
 	// Update is called once per frame
@@ -48,14 +51,21 @@ public class Room : MonoBehaviour {
         Dictionary<Side, Room> neighbors = getNeighbors();
 
         
-        foreach (Side s in Enum.GetValues(typeof(Side)))
+        foreach (Side s in sidesWithDoors)
         {
             Room n = neighbors[s];
             if (n == null)
             {
                 //create a room here
-                rm.createRoom(x + sideVectors[s].x, y + sideVectors[s].y);
+                //rm.createRoom(x + sideVectors[s].x, y + sideVectors[s].y);
             }
         }
+    }
+
+    //TODO: implement
+    Dictionary<Side, Room> getNeighbors()
+    {
+        throw new NotImplementedException();
+        return null;
     }
 }
