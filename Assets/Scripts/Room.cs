@@ -7,14 +7,20 @@ public class Room : MonoBehaviour {
 
     private enum Side
     {
-        North = new int[] {1, 0} ,
-        South = 2,
-        East  = 3,
-        West  = 4
+        North,
+        South,
+        East,
+        West
     };
 
-
-    [SerializeField] Dictionary<Side, bool> sidesWithDoors = { 0, 1, 2, 3 };
+    Dictionary<Side, Vector2> sideVectors = new Dictionary<Side, Vector2>()
+    {
+        { Side.North, Vector2.up},
+        {Side.South, Vector2.down},
+        {Side.East, Vector2.right},
+        {Side.West, Vector2.left}
+    };
+       
     RoomManager rm;
     private int x;  //X possition  in the grid
     private int y;  //Y possition in the grid
@@ -48,9 +54,8 @@ public class Room : MonoBehaviour {
             if (n == null)
             {
                 //create a room here
-                rm.createRoom(x + s.x, y +s.y);
+                rm.createRoom(x + sideVectors[s].x, y + sideVectors[s].y);
             }
-            
         }
     }
 }
