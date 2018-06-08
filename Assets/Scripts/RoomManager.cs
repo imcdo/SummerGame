@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour {
 
+    public static Dictionary<Side, Vector2> sideVectors = new Dictionary<Side, Vector2>()
+    {
+        { Side.North, Vector2.up},
+        {Side.South, Vector2.down},
+        {Side.East, Vector2.right},
+        {Side.West, Vector2.left}
+    };
+
     private Rooms[,,] rooms;
 
-    //TODO: makeside as well as the dictionary acceptable in both room and roommanager
-
+    
     //TODO:
     //x, y param are center possition, returns a dictionary of all the rooms that border the given positioned room
     public Dictionary<Side, Room> getNeighbors(int x, int y, int l)

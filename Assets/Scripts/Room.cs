@@ -4,24 +4,9 @@ using UnityEngine;
 using System;
 
 
+
+
 public class Room : MonoBehaviour {
-
-    private enum Side
-    {
-        North,
-        South,
-        East,
-        West
-    };
-
-    Dictionary<Side, Vector2> sideVectors = new Dictionary<Side, Vector2>()
-    {
-        { Side.North, Vector2.up},
-        {Side.South, Vector2.down},
-        {Side.East, Vector2.right},
-        {Side.West, Vector2.left}
-    };
-
 
     [SerializeField] Side[] sidesWithDoors = { Side.North, Side.South, Side.East, Side.West };
     RoomManager rm;
@@ -32,12 +17,14 @@ public class Room : MonoBehaviour {
     //constructor
     public Room(int x, int y, int l)
     {
-
+        this.x = x;
+        this.y = y;
+        this.l = l;
     }
 
 	// Use this for initialization
 	void Start () {
-		//TODO: error check for sidesWithDoors, check to make sure no duplicates
+		
 	}
 	
 	// Update is called once per frame
