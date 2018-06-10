@@ -14,17 +14,24 @@ public class Room : MonoBehaviour {
     private int y;  //Y possition in the grid
     private int l;  //the level that this tile is on
 
+    private int playerLevel = LayerMask.NameToLayer("Player");
+    private bool neighborsCalculated;
+    private GameObject player;
+
     //constructor
-    public Room(int x, int y, int l)
+    public void roomStart(int x, int y, int l, RoomManager rm, GameObject player)
     {
         this.x = x;
         this.y = y;
         this.l = l;
+        this.rm = rm;
+        this.player = player;
+        
     }
 
 	// Use this for initialization
 	void Start () {
-		
+        neighborsCalculated = false;
 	}
 	
 	// Update is called once per frame
@@ -35,24 +42,27 @@ public class Room : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         //load the neighboring tiles if they havnet spawned
-        Dictionary<Side, Room> neighbors = getNeighbors();
-
-        
-        foreach (Side s in sidesWithDoors)
+        Dictionary<Side, Room> neighbors = rm.getNeighbors(x, y, l);
+        Debug.Log(col.gameObject.name +  "has collided");
+        if (col.gameObject.layer.Equals(8))
         {
-            Room n = neighbors[s];
-            if (n == null)
+            Debug.Log("is player");
+            if (!neighborsCalculated)
             {
-                //create a room here
-                //rm.createRoom(x + sideVectors[s].x, y + sideVectors[s].y);
+                foreach (Side s in sidesWithDoors)
+                {
+                    Debug.Log("detecting side:" + s.ToString());
+                    Room n = neighbors[s];
+                    if (n == null)
+                    {
+                        Debug.Log("Originial x: " + x + "new x: " + (x + (int)RoomManager.sideVectors[s].x));
+                        Debug.Log("Originial y: " + y + "new y: " + (y + (int)RoomManager.sideVectors[s].y));
+                        //create a room here
+                        rm.createRoom(x + (int)RoomManager.sideVectors[s].x, y + (int)RoomManager.sideVectors[s].y, 1);
+                    }
+                }
+                neighborsCalculated = true;
             }
         }
-    }
-
-    //TODO: implement
-    Dictionary<Side, Room> getNeighbors()
-    {
-        throw new NotImplementedException();
-        return null;
     }
 }
