@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4383176935814178}
   - component: {fileID: 33749593989747336}
-  - component: {fileID: 64566471295653708}
   - component: {fileID: 23927215431802488}
   - component: {fileID: 114035492167197554}
+  - component: {fileID: 64787730330616762}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846990625838902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7524533, y: 6.43, z: -3.9285774}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,8 +84,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846990625838902}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64566471295653708
+  m_Mesh: {fileID: 4300000, guid: 9dc3be9cc8a3d4e47953826b1e5fe596, type: 3}
+--- !u!64 &64787730330616762
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,7 +98,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 9dc3be9cc8a3d4e47953826b1e5fe596, type: 3}
 --- !u!114 &114035492167197554
 MonoBehaviour:
   m_ObjectHideFlags: 1

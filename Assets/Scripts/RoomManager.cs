@@ -45,6 +45,7 @@ public class RoomManager : MonoBehaviour {
             Vector3 posData = getPossition(x, y, l);
             newRoom.transform.position = new Vector3(posData.x, 1, posData.y);
             newRoom.roomStart(x, y, l, this, player);
+            newRoom.GetComponent<Renderer>().enabled = false;
             rooms[x, y, l] = newRoom;
             return true;
         }

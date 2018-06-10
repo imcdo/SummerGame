@@ -44,6 +44,8 @@ public class Room : MonoBehaviour {
         //load the neighboring tiles if they havnet spawned
         Dictionary<Side, Room> neighbors = rm.getNeighbors(x, y, l);
         Debug.Log(col.gameObject.name +  "has collided");
+
+        gameObject.GetComponent<Renderer>().enabled = true;
         if (col.gameObject.layer.Equals(8))
         {
             Debug.Log("is player");
