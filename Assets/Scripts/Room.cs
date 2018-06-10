@@ -14,7 +14,7 @@ public class Room : MonoBehaviour {
     private int y;  //Y possition in the grid
     private int l;  //the level that this tile is on
 
-    private int playerLevel = LayerMask.NameToLayer("Player");
+    private int playerLevel;
     private bool neighborsCalculated;
     private GameObject player;
 
@@ -32,7 +32,8 @@ public class Room : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         neighborsCalculated = false;
-	}
+        playerLevel = LayerMask.NameToLayer("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,12 +44,11 @@ public class Room : MonoBehaviour {
     {
         //load the neighboring tiles if they havnet spawned
         Dictionary<Side, Room> neighbors = rm.getNeighbors(x, y, l);
-        Debug.Log(col.gameObject.name +  "has collided");
+        Debug.Log(col.gameObject.name +  "has collided with tile x: " + x + ", y: " + y);
 
         gameObject.GetComponent<Renderer>().enabled = true;
-        if (col.gameObject.layer.Equals(8))
+        if (col.gameObject.layer.Equals(playerLevel))
         {
-            Debug.Log("is player");
             if (!neighborsCalculated)
             {
                 foreach (Side s in sidesWithDoors)
