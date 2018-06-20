@@ -14,11 +14,36 @@ public class Room : MonoBehaviour {
     private int y;  //Y possition in the grid
     private int l;  //the level that this tile is on
 
+    Dictionary<Side, Wall> walls;
+
     private int playerLevel;
     private bool neighborsCalculated;
     private GameObject player;
 
+    //TODO actually make a walls class
+    private class Wall
+    {
+        public Wall(Side wallSide, GameObject parentGameOb)
+        {
+
+        }
+    }
+
     //constructor
+    public Room(int x, int y, int l, RoomManager rm, GameObject player)
+    {
+        Dictionary<Side, Wall> walls = new Dictionary<Side, Wall>()
+        {
+            {Side.North, new Wall(Side.North, gameObject)},
+            {Side.South, new Wall(Side.South, gameObject)},
+            {Side.East, new Wall(Side.East, gameObject)},
+            {Side.West, new Wall(Side.West, gameObject)}
+        };
+
+
+        roomStart(x, y, l, rm, player);
+    }
+
     public void roomStart(int x, int y, int l, RoomManager rm, GameObject player)
     {
         this.x = x;
@@ -33,6 +58,10 @@ public class Room : MonoBehaviour {
 	void Start () {
         neighborsCalculated = false;
         playerLevel = LayerMask.NameToLayer("Player");
+        if (walls == null)
+        {
+            
+        }
     }
 	
 	// Update is called once per frame
