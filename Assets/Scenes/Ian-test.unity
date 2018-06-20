@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &104781729
 MonoBehaviour:
@@ -155,6 +155,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobby: {fileID: 114213064100151742, guid: a88f21c36751abb45ac5e6dc682dfbe6, type: 2}
   player: {fileID: 1158035074953250, guid: 09010cbe5e9ef854a9b4abb38f0be0ea, type: 2}
+--- !u!1 &1870008437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: ad76d28adfb94af44bde426b940c3493, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1870008438}
+  m_Layer: 0
+  m_Name: wood poll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870008438
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: ad76d28adfb94af44bde426b940c3493, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1870008437}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 149.47873, y: 96.29193, z: 149.79352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088086922
 GameObject:
   m_ObjectHideFlags: 0
