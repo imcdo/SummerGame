@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c2aa821af700f469ac826aed9cdd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobby: {fileID: 114035492167197554, guid: 2506a0892baa0f14090a2b9bd2bfab4d, type: 2}
+  lobby: {fileID: 114213064100151742, guid: a88f21c36751abb45ac5e6dc682dfbe6, type: 2}
   player: {fileID: 1158035074953250, guid: 09010cbe5e9ef854a9b4abb38f0be0ea, type: 2}
 --- !u!1 &2088086922
 GameObject:
