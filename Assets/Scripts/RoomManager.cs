@@ -8,7 +8,7 @@ public class RoomManager : MonoBehaviour {
     private int numRoomsSpawned = 0;
     [SerializeField] Room lobby;
     [SerializeField] GameObject player;
-
+    [SerializeField] float floorDimension = 10;
 
     public static Room[] roomTypes;
     public static Dictionary<Side, Vector2> sideVectors = new Dictionary<Side, Vector2>()
@@ -66,8 +66,8 @@ public class RoomManager : MonoBehaviour {
     {
         //TODO implement levels
         Vector3 dim = new Vector3();
-        dim.x = (initX - (rooms.GetLength(0) / 2)) * 10 ;
-        dim.y = (initY - (rooms.GetLength(1) / 2)) * 10 ;
+        dim.x = (initX - (rooms.GetLength(0) / 2)) * floorDimension;
+        dim.y = (initY - (rooms.GetLength(1) / 2)) * floorDimension;
         return dim;
     }
 
@@ -89,7 +89,7 @@ public class RoomManager : MonoBehaviour {
         //create player
         GameObject p = Instantiate(player);
         Vector3 posData = getPossition(middleX, middleY, 1);
-        p.transform.position = new Vector3(posData.x, 10 , posData.y);
+        p.transform.position = new Vector3(posData.x, floorDimension, posData.y);
     }
 	
 	// Update is called once per frame

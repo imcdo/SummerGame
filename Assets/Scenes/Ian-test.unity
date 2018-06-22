@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobby: {fileID: 114213064100151742, guid: a88f21c36751abb45ac5e6dc682dfbe6, type: 2}
   player: {fileID: 1158035074953250, guid: 09010cbe5e9ef854a9b4abb38f0be0ea, type: 2}
+  floorDimension: 20
 --- !u!1 &1870008437
 GameObject:
   m_ObjectHideFlags: 0
